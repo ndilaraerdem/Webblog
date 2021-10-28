@@ -1,0 +1,30 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h5><%= form.label :title %></h5>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+<div class="field">
+  <h5>You have to upload an <%= form.label :image %>!</h5>
+  <%= form.file_field :image, class: 'form-control' %>
+</div>
+  <div class="field">
+    <h5><%= form.label :body %></h5>
+    <%= form.text_area :body, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary btn-block' %>
+  </div>
+<% end %>
