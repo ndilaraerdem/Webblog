@@ -18,6 +18,10 @@
 <div class="field">
   <h5>You have to upload an <%= form.label :image %>!</h5>
   <%= form.file_field :image, class: 'form-control' %>
+  <br><h5>Current Image:</h5>
+   <% if post.image.present? %>
+    <%= image_tag(post.image, width: '50%') %><br>
+    <% end%>
 </div>
   <div class="field">
     <h5><%= form.label :body %></h5>
