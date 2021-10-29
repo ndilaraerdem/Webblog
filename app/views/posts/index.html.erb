@@ -10,6 +10,7 @@
     <h1 class="d-flex justify-content-between mb-4"> BEST RECIPES <%= link_to 'New Post', new_post_path, class: 'text-light btn btn-primary' %>
     </h1>
 <br>
+<p id="notice"><%= notice %></p>
 
 <% @posts.each do |post| %>
   <%= link_to post, class: 'text-decoration-none' do %>
@@ -23,7 +24,6 @@
   <% end %>
 <% end %>
 <br>
-<p id="notice"><%= notice %></p>
 <br>
 </div>
 </body>
